@@ -1,0 +1,35 @@
+{
+  "name": "live-event-pipeline",
+  "version": "0.1.0",
+  "description": "Event ingestion API with idempotent Postgres storage, aggregation + funnel queries, and a live React dashboard.",
+  "main": "dist/index.js",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc -p tsconfig.json && npm --prefix web run build",
+    "start": "node dist/index.js",
+    "seed": "tsx src/seed.ts",
+    "test": "vitest run",
+    "typecheck": "tsc -p tsconfig.test.json --noEmit",
+    "web:dev": "npm --prefix web run dev"
+  },
+  "author": "chsk",
+  "license": "MIT",
+  "dependencies": {
+    "@fastify/static": "^10.1.8",
+    "fastify": "^5.12.7",
+    "pg": "^8.23.1",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "@types/pg": "^8.23.1",
+    "embedded-postgres": "^17.11.0-beta.19",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.5"
+  },
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  }
+}
